@@ -58,7 +58,7 @@ function Homepage() {
       const {name , email ,phone , password , address , zender} = userdata;
        try{
         if(name && email && phone && password && address && zender){
-          const res = await axios.post("/register",{
+          const res = await axios.post("https://serverbymehultwo.onrender.com/register",{
             name , email ,phone , password , address , zender
            })
            if(res.status == 200){
