@@ -17,7 +17,7 @@ function Homepage() {
     })
     const getdata = async()=>{
       try{
-        const res = await axios.get("/homee",{
+        const res = await axios.get("https://serverbymehultwo.onrender.com/register/homee",{
      
         })
         if(res.status === 200){
@@ -38,7 +38,7 @@ function Homepage() {
       const {email,password}=userdata
         try{
        if(email && password){
-         const res = await axios.post("/login",{
+         const res = await axios.post("https://serverbymehultwo.onrender.com/register/login",{
           email,password
          })
          if(res.status == 200){

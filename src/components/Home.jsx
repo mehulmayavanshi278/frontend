@@ -13,7 +13,7 @@ function Home() {
 
   const logoutme=async()=>{
    try{
-   const res = await axios.get("/logoutt",{
+   const res = await axios.get("https://serverbymehultwo.onrender.com/register/logoutt",{
 
    })
    if(res.status === 200){
@@ -135,7 +135,7 @@ const history = useNavigate();
   },0))}
   const getdata = async()=>{
     try{
-     const res = await axios.get("/homee",{
+     const res = await axios.get("https://serverbymehultwo.onrender.com/register/homee",{
 
      })
      if(res.status === 200){
