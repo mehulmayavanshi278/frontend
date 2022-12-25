@@ -30,7 +30,7 @@ function Cart(props) {
             <div className="icon"> 
             <i className="fa-solid fa-clock color-success"></i>
             </div>
-            <p> {new Date().getHours()} :{new Date().getMinutes() >9 ? new Date().getMinutes() : `{0 ${new Date().getMinutes()}}` }  { new Date().getHours() >12 && new Date().getHours() <25 ? "pm" : "am"}</p>
+            <p> {new Date().getHours()} :{new Date().getMinutes() >9 ? new Date().getMinutes() : `0${new Date().getMinutes()}` }  { new Date().getHours() >12 && new Date().getHours() <25 ? "pm" : "am"}</p>
           </div>
           <div className="address">
             <div className="icon">

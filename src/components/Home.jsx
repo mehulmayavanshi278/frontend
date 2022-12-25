@@ -13,11 +13,12 @@ function Home() {
 
   const logoutme=async()=>{
    try{
-   const res = await axios.get("https://serverbymehultwo.onrender.com/register/logoutt",{
+   const res = await axios.get("/logoutt",{
 
    })
    if(res.status === 200){
     localStorage.clear("cart");
+    
     history("/");
    }
    }catch(err){
@@ -26,12 +27,12 @@ function Home() {
   }
 const history = useNavigate();
   const searched=(val)=>{
-    console.log(val)
+    // console.log(val)
    setSearchval(val);
    let b   = menu.find((elm)=>{
     return elm.desc == val;
    })
-   console.log(b);
+  //  console.log(b);
    setSearchedd(b);
   }
 
@@ -135,12 +136,12 @@ const history = useNavigate();
   },0))}
   const getdata = async()=>{
     try{
-     const res = await axios.get("https://serverbymehultwo.onrender.com/register/homee",{
+     const res = await axios.get("/homee",{
 
      })
      if(res.status === 200){
       setMydetails(res.data);
-     }else{
+     }else if(res.status === 201){
       history("/");
      }
     }catch(err){

@@ -17,7 +17,7 @@ function Homepage() {
     })
     const getdata = async()=>{
       try{
-        const res = await axios.get("https://serverbymehultwo.onrender.com/register/homee",{
+        const res = await axios.get("/homee",{
      
         })
         if(res.status === 200){
@@ -38,10 +38,11 @@ function Homepage() {
       const {email,password}=userdata
         try{
        if(email && password){
-         const res = await axios.post("https://serverbymehultwo.onrender.com/register/login",{
+         const res = await axios.post("/login",{
           email,password
          })
          if(res.status == 200){
+        //  document.cookie("jwt= res.data; Secure;")
           history("/Home");
          }else{
           alert(res.data);
@@ -58,7 +59,7 @@ function Homepage() {
       const {name , email ,phone , password , address , zender} = userdata;
        try{
         if(name && email && phone && password && address && zender){
-          const res = await axios.post("https://serverbymehultwo.onrender.com/register",{
+          const res = await axios.post("/register",{
             name , email ,phone , password , address , zender
            })
            if(res.status == 200){
@@ -117,7 +118,7 @@ function Homepage() {
           </div>}
           <div className="name">
            {  !islogin ? <button type="submit"onClick={submitbtn}>signup</button>
-           : <button type="submit"onClick={logintbtn}>signup</button>}
+           : <button type="submit"onClick={logintbtn}>login</button>}
           </div>
           <div className="name">
            { !islogin  ? <p onClick={()=>{setIslogin(true)}}> already sign up ? login</p> 

@@ -4,6 +4,9 @@ import { NavLink , useNavigate } from 'react-router-dom'
 import { cartContext } from '../App'
 
 function Menubar() {
+  const gotoTop =()=>{
+    document.querySelector('.foodBody').scrollTop=0;
+  }
 const hidemenubar=()=>{
   document.querySelector(".menubar").style.left="-40vh"
 }
@@ -43,7 +46,7 @@ const hidemenubar=()=>{
             </ul>
          </nav>
          <div className='startBtn'>
-            <button >Start New Order</button>
+            <button onClick={gotoTop}>Start New Order</button>
          </div>
        </div>
     </>
